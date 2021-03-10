@@ -1,4 +1,4 @@
-- hosts: web
+- hosts: ubuntus
   become: yes
   tasks:
   - name: "apt-get update"
