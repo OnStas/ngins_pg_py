@@ -1,10 +1,4 @@
-##
-#Ansible playbook for the PostgreSQL.
-#
-# This installs PostgreSQL on an Ubuntu system, creates a database called
-# "pg_test" and a user called "iamuser" with password "Pkv02zb6l"
-# with access to the "myapp" database.
-#
+
 ---
 - hosts: ubuntus
   become: yes
@@ -24,11 +18,6 @@
   become: yes
   become_user: postgres
   gather_facts: no
-
-  vars:
-    dbname: pg_test
-    dbuser: iamuser
-    dbpassword: Pkv02zb6l
 
   tasks:
   - name: ensure database is created
