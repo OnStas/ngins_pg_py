@@ -1,0 +1,16 @@
+server {
+  listen 80;
+  listen [::]:80;
+  server_name {{ domain }};
+  root /var/www/{{ domain }};
+  }
+  # Handle static content
+  location  ^~ /static {
+    try_files $uri $uri/ =404;
+   }
+
+  # Handle dynamic content
+  location / {
+      proxy_pass http://127.0.0.1:3000;
+  }
+}

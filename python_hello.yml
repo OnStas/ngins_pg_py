@@ -1,0 +1,11 @@
+---
+- hosts: ubuntus
+  become: yes
+  sudo: yes
+
+  tasks:
+    - name: Copy file
+      copy: src=..script.py dest=/opt/script.py owner="{{ ansible_user }}" group="{{ ansible_user }}" mode=755
+
+    - name: Execute script
+      command: /opt/script.py
