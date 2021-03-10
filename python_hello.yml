@@ -5,7 +5,7 @@
 
   tasks:
     - name: Copy file
-      copy: src=..script.py dest=/opt/script.py  mode=755
+      copy: src=script.py dest=script.py  mode=755
 
     - name: Execute script
-      command: /opt/script.py
+      script: script.py
